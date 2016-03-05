@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+print  [x * x for x in range (1,11)]
+
+print [x * x for x in range(1,11) if x % 2 == 0]
+
+print [m + n for m in 'ABC' for n in 'XYZ']
+
+import os
+print [d for d in os.listdir('.')]
+
+d = {'x':'A','y':'B','z':'C'}
+for k ,v in d.iteritems():
+	print k , ' = ' , v
+
+print [k + ' = ' + v for k,v in d.iteritems()]
+d1 = {4:'A','y':'B','z':'C'}
+for k,v in d1.iteritems():
+	if isinstance(k,str):
+		print k.lower() , ' = ' , v.lower()
+	else:
+		print k,' = ' , v
+g = (x * x for x in range(1,11))
+print g
+print g.next()
+print [x for x in g]
+def odd():
+	print 'step1'
+	yield 1
+	print 'step2'
+	yield 3
+	print 'step3'
+	yield 5
+o = odd()
+o.next()
+o.next()
+o.next()
+
+def fib(max):
+	n,a,b = 0,0,1
+	while n < max:
+		print b
+		a,b=b,a+b
+		n = n + 1
+fib(10)
+
